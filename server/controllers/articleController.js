@@ -12,7 +12,6 @@ const getAllArticles = async (req, res) => {
 
 const addArticle = async (req, res) => {
     const enteredArticle = req.body;
-    console.log(req);
     try {
         const article = new Article({ name: enteredArticle.articleName, selectedImage: req.file.filename });
         article.save();

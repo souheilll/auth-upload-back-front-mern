@@ -11,8 +11,6 @@ function AddItem() {
     const [selectedFile, setSelectedFile] = useState(null);
     const dispatch = useDispatch();
     const token = localStorage.getItem('token');
-    
-
 
     const handleNameChange = (e) => {
         setArticleName(e.target.value);
@@ -20,7 +18,6 @@ function AddItem() {
     const handleFileChange = (e) => {
         setSelectedFile(e.target.files[0]);
     }
-
 
     const handleSubmit = (e) => {
         e.preventDefault();

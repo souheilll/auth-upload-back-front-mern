@@ -1,5 +1,5 @@
 import { Add_Article, GET_ARTICLES } from "./const";
-import * as api from '../../Service/articleApi'
+import * as api from '../../Service/articleApi';
 
 
 export const getArticle = () => async (dispatch) => {
@@ -14,9 +14,8 @@ export const getArticle = () => async (dispatch) => {
 export const addArticle = (formData, token) => async (dispatch) => {
     try {
         const res = await api.addArticle(formData, token);
-        console.log(res);
-        const item = res.article
-        dispatch({ type: Add_Article, payload: item })
+        const item = res.article;
+        dispatch({ type: Add_Article, payload: item });
     } catch (error) {
         console.log(error);
     }

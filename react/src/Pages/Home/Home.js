@@ -8,7 +8,6 @@ import { getArticle } from '../../Redux/article/articleAction';
 import { useDispatch } from 'react-redux';
 
 
-
 function Home() {
     const article = useSelector(state => state.articleReducer);
     const items = article.articles;
@@ -36,11 +35,10 @@ function Home() {
 
     return (
         <div>
-            <h1> all articles</h1>
             <div className={classes.item}>
                 {loading && <div><Spinner animation="grow" size="sm" />
-                    <Spinner animation="grow" /></div>}
-                {items.map(item => <CustomCard key={item._id} item={item} operation={'getItems'} />)}
+                    <Spinner animation="grow" /></div>} 
+             {items.map(item => <CustomCard key={item._id} item={item} operation={'getItems'} />)}
             </div>
         </div>
     )
